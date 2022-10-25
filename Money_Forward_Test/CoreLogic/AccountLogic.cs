@@ -20,16 +20,13 @@ namespace Money_Forward_Test.CoreLogic
             var result = await res.Content.ReadAsStringAsync();
              List < GetUserAccountModel > am = new  List<GetUserAccountModel>();
             am = JsonConvert.DeserializeObject<List<GetUserAccountModel>>(result);
-            
-           
             return am;
         }
 
         public void PrintAccountToConsole(List<GetUserAccountModel> am)
         {
            foreach(var item in am)
-            {
-              
+            {              
                     Console.WriteLine("====================== Start Printing Account ======================");
                     Console.WriteLine($"Account ID: {item.attributes.id}");
                     Console.WriteLine($"User ID: {item.attributes.user_id}");
